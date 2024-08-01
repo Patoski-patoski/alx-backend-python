@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """main.py: contains a function that adds two floating arguments """
 
 
