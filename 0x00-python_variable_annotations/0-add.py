@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""main.py: contains a function that adds two floating arguments """
+"""0-add: contains a function that adds two floating arguments """
 
 
 def add(a: float, b: float) -> float:
