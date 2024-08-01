@@ -4,7 +4,8 @@
 """
 
 
-def floor(n: float) -> float:
+
+def floor(n: float) -> int:
     """Get the value of the floor of the float.
 
     Args:
