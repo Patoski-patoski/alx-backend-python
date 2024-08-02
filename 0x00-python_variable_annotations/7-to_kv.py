@@ -15,6 +15,6 @@ def to_kv(k: str, v: Union[int, float]) -> Tuple[str, float]:
         v (Union[int, float]): The second element is the square
 
     Returns:
-        Tuple[str, Union[int, float]]: returns a tuple
+        Tuple[str, float]: returns a tuple
     """
     return (str(k), v * v)
