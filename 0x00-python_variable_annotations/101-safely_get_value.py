@@ -5,7 +5,7 @@ from typing import Mapping, TypeVar,  Union, Sequence, Any
 T = TypeVar('T')
 
 
-def safely_get_value(dct: Mapping[Any, Any], key: Any,
+def safely_get_value(dct: Mapping, key: Any,
                      default: Union[None, T]) -> Union[Any, T]:
 
     """add type annotations to the function
