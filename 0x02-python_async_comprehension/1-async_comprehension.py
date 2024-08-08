@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
+"""1-async_comprehension"""
 
-"""0-async_generator.py"""
 from typing import List
 
 async_generator = __import("0-async_generator").async_generator
