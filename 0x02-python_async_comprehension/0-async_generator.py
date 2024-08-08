@@ -3,10 +3,10 @@
 """0-async_generator.py"""
 import asyncio
 import random
-from typing import AsyncIterable
+from typing import AsyncGenerator
 
 
-async def async_generator() -> AsyncIterable[float]:
+async def async_generator() -> AsyncGenerator[float]:
     """async_generator:a coroutine called async_generator that takes no
        arguments.
 
