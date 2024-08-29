@@ -28,6 +28,18 @@ class TestAccessNestedMap(unittest.TestCase):
         """
         self.assertEqual(access_nested_map(n_map, path), expected)
 
+    @parameterized.expand([
+        ({}, ("a"), KeyError('a')),
+        ({"a": 1}, ("a", "b"), KeyError('b')),
+    ])
+    def test_access_nested_map_exception(
+            self, n_map: Mapping, path: Sequence, expected: Any):
+        """Test that a KeyError is raised for the following inputs"""
+        with self.assertRaises(KeyError) as context:
+            access_nested_map(n_map, path)
+
+        self.assertEqual(str(context.exception), f"{expected}")
+
 
 if __name__ == "__main__":
     unittest.main()
