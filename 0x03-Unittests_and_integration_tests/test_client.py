@@ -87,6 +87,23 @@ class TestGithubOrgClient(unittest.TestCase):
             # Assert get_json was called once with the fake URL
             mock_get_json.assert_called_once_with("https://fake.url/repos")
 
+    @parameterized.expand([
+         ({"license": {"key": "my_license"}}, "my_license", True),
+         ({"license": {"key": "other_license"}}, "my_license", False),
+         ({}, "my_license", False),  # Edge case where the repo has no license
+         ({"license": None}, "my_license", False),
+         # Edge case where the license is None
+    ])
+    def test_has_license(self, repo, license_key, expected):
+        """Test that GithubOrgClient.has_license returns the correct boolean
+        value."""
+
+        # Call the has_license method
+        result = GithubOrgClient.has_license(repo, license_key)
+
+        # Assert that the result matches the expected value
+        self.assertEqual(result, expected)
+
 
 if __name__ == "__main__":
     unittest.main()
