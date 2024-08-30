@@ -69,7 +69,8 @@ class TestGithubOrgClient(unittest.TestCase):
         mock_get_json.return_value = example_repos_payload
 
         # Mock _public_repos_url to return a fake URL
-        with patch.object(GithubOrgClient, '_public_repos_url', new_callable=PropertyMock) as mock_public_repos_url:
+        with patch.object(GithubOrgClient, '_public_repos_url',
+                new_callable=PropertyMock) as mock_public_repos_url:
             mock_public_repos_url.return_value = "https://fake.url/repos"
 
             # Create an instance of GithubOrgClient
